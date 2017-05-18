@@ -23,7 +23,7 @@ public class PromotionItemController {
 	}
 	
 	@RequestMapping(value="/promoItem/{id}", method=RequestMethod.GET, headers="Accept=application/json")
-	public PromotionItem getPromotionItem(@PathVariable long id){
-		return promotionItemService.getPromotionItem(id);
+	public PromotionItem getPromotionItem(@PathVariable String promotionItemId){
+		return promotionItemService.getPromotionItem(promotionItemId);
 	}
 }

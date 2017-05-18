@@ -2,24 +2,55 @@ package com.infantechar.application.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="promotionitem")
 public class PromotionItem {
-	private long id;
+	
+	@Id	
+	@Column(name="promotionitemid")
+	private String promotionItemId;
+	
+	@Column(name="name")
 	private String name;	
+	
+	@Column(name="description")
 	private String description;
+	
+	@Column(name="promotiontype")
 	private int promotionType;
+	
+	@Column(name="merchantid")
 	private String merchantId;	
+	
+	@Column(name="validatedatestart")
 	private Date validateDateStart;
+	
+	@Column(name="validatedateend")
 	private Date validateDateEnd;
-	private boolean reSpawn;
+	
+	@Column(name="respawn")
+	private int reSpawn;
+	
+	@Column(name="latitude")
 	private double latitude;
+	
+	@Column(name="longitude")
 	private double longitude;
+	
+	@Column(name="userid")
 	private String userId;
 	
-	public long getId() {
-		return id;
+	
+	public String getPromotionItemid() {
+		return promotionItemId;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setPromotionItemId(String promotionItemId) {
+		this.promotionItemId = promotionItemId;
 	}
 	public String getName() {
 		return name;
@@ -57,10 +88,10 @@ public class PromotionItem {
 	public void setValidateDateEnd(Date validateDateEnd) {
 		this.validateDateEnd = validateDateEnd;
 	}
-	public boolean isReSpawn() {
+	public int isReSpawn() {
 		return reSpawn;
 	}
-	public void setReSpawn(boolean reSpawn) {
+	public void setReSpawn(int reSpawn) {
 		this.reSpawn = reSpawn;
 	}
 	public double getLatitude() {
