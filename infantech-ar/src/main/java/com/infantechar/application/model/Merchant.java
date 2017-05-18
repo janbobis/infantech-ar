@@ -2,7 +2,6 @@ package com.infantechar.application.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,9 +9,9 @@ import javax.persistence.Table;
 @Table(name="merchant")
 public class Merchant {
 	
-	@Id
-	@GeneratedValue
-	private long id;
+	@Id	
+	@Column(name="merchantid")
+	private String merchantId;
 	
 	@Column(name="name")
 	private String name;
@@ -47,11 +46,12 @@ public class Merchant {
 	@Column(name="domain")
 	private String domain;
 	
-	public long getId() {
-		return id;
+	
+	public String getMerchantId() {
+		return merchantId;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
 	}
 	public String getName() {
 		return name;

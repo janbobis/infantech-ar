@@ -18,8 +18,8 @@ public class MerchantService {
 		repository.save(merchant);
 	}
 	
-	public Merchant getMerchant(long id){
-		return repository.findById(id);
+	public Merchant getMerchant(String merchantId){
+		return repository.findByMerchantId(merchantId);
 	}
 	
 	public List<Merchant> getMerchants(){

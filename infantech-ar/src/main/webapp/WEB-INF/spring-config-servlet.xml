@@ -9,11 +9,11 @@
 
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.infantechar.application" />
-	<jpa:repositories base-package="com.infantechar.application.repository" />
 	
-	<!-- <import resource="jpa-config-mysql.xml"/> -->
-	<!-- <import resource="jpa-config-oracle.xml"/> -->
-<!-- 
+	<jpa:repositories base-package="com.infantechar.application.repository" />	
+	
+	<import resource="jpa-config-oracle.xml"/>
+
 	<bean id="transactionManager"
 		class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
@@ -30,5 +30,5 @@
 			</bean>
 		</property>
 	</bean>
-	 -->
+	
 </beans>

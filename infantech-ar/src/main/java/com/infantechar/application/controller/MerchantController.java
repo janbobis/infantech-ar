@@ -22,9 +22,9 @@ public class MerchantController {
 		return merchantService.getMerchants();
 	}
 	
-	@RequestMapping(value="/merchant/{id}", method=RequestMethod.GET, headers="Accept=application/json")
-	public Merchant getMerchant(@PathVariable long id){
-		return merchantService.getMerchant(id);
+	@RequestMapping(value="/merchant/{merchantId}", method=RequestMethod.GET, headers="Accept=application/json")
+	public Merchant getMerchant(@PathVariable String merchantId){
+		return merchantService.getMerchant(merchantId);
 	}	
 	
 }

@@ -2,27 +2,64 @@ package com.infantechar.application.model;
 
 import java.util.Date;
 
-public class User {
-	private long id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="applicationuser")
+public class ApplicationUser {
+	
+	@Id
+	@Column(name="userid")
+	private String userId;
+	
+	@Column(name="username")
 	private String userName;
+	
+	@Column(name="firstname")
 	private String firstName;
+	
+	@Column(name="middlename")
 	private String middleName;
+	
+	@Column(name="lastname")
 	private String lastName;
+	
+	@Column(name="birthdate")
 	private Date birthDate;
+	
+	@Column(name="address")
 	private String address;
+	
+	@Column(name="city")
 	private String city;
+	
+	@Column(name="state")
 	private String state;
+	
+	@Column(name="country")
 	private String country;
+	
+	@Column(name="postcode")
 	private String postCode;
+	
+	@Column(name="contactnumber")
 	private String contactNumber;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="userpassword")
 	private String userPassword;
 	
-	public long getId() {
-		return id;
+	
+	public String getUserId() {
+		return userId;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	public String getUserName() {
 		return userName;
