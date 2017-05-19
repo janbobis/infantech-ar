@@ -16,17 +16,16 @@ public class ApplicationUserService {
 	@Autowired
 	ApplicationUserRepository repository;
 	
-	public Response saveUser(ApplicationUser applicationUser){
+	public Response createUser(ApplicationUser applicationUser){
 		Response response = new Response();
 		if(repository.findByUserName(applicationUser.getUserName())!=null){
 			response.setStatusCode(ApplicationConstants.STATUS_ERR);
-			response.setStatusMessage(ApplicationConstants.USERNAME_EXIST);			
+			response.setStatusMessage(ApplicationConstants.USER_NAME_EXISTS);			
 		} else {
 			response.setStatusCode(ApplicationConstants.STATUS_OK);
 			response.setStatusMessage(ApplicationConstants.SUCCESS);
 			repository.saveAndFlush(applicationUser);	
-		}
-		
+		}		
 		return response;
 	}
 	

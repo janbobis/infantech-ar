@@ -30,7 +30,7 @@ public class ApplicationUserController {
 	}
 	
 	@RequestMapping(value="/user", method=RequestMethod.POST, headers="Accept=application/json")
-	public Response saveApplicationUser(@RequestBody ApplicationUser applicationUser){
-		return applicationUserService.saveUser(applicationUser);
+	public Response createApplicationUser(@RequestBody ApplicationUser applicationUser){
+		return applicationUserService.createUser(applicationUser);
 	}
 }

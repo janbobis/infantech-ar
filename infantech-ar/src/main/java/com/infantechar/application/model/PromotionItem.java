@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,9 +15,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Table(name="promotionitem")
 public class PromotionItem {
 	
-	@Id	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="promotionitemid")
-	private String promotionItemId;
+	private long promotionItemId;
 	
 	@Column(name="name")
 	private String name;	
@@ -27,7 +30,7 @@ public class PromotionItem {
 	private int promotionType;
 	
 	@Column(name="merchantid")
-	private String merchantId;	
+	private long merchantId;	
 	
 	@JsonFormat(pattern="dd-MM-yyyy")
 	@Column(name="validitydatestart")
@@ -47,13 +50,13 @@ public class PromotionItem {
 	private double longitude;
 	
 	@Column(name="userid")
-	private String userId;
+	private long userId;
 	
 	
-	public String getPromotionItemId() {
+	public long getPromotionItemId() {
 		return promotionItemId;
 	}
-	public void setPromotionItemId(String promotionItemId) {
+	public void setPromotionItemId(long promotionItemId) {
 		this.promotionItemId = promotionItemId;
 	}
 	public String getName() {
@@ -74,10 +77,10 @@ public class PromotionItem {
 	public void setPromotionType(int promotionType) {
 		this.promotionType = promotionType;
 	}
-	public String getMerchantId() {
+	public long getMerchantId() {
 		return merchantId;
 	}
-	public void setMerchantId(String merchantId) {
+	public void setMerchantId(long merchantId) {
 		this.merchantId = merchantId;
 	}	
 	public Date getValidityDateStart() {
@@ -110,10 +113,10 @@ public class PromotionItem {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
-	public String getUserId() {
+	public long getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}	
 }
