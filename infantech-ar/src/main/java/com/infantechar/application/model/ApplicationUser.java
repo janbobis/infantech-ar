@@ -16,9 +16,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class ApplicationUser {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="userid")
-	private String userId;
+	private long userId;
 	
 	@Column(name="username")
 	private String userName;
@@ -61,10 +61,10 @@ public class ApplicationUser {
 	private String userPassword;
 	
 	
-	public String getUserId() {
+	public long getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {
