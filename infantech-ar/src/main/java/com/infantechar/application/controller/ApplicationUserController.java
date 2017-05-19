@@ -3,7 +3,9 @@ package com.infantechar.application.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +26,10 @@ public class ApplicationUserController {
 	@RequestMapping(value="/user/{userId}", method=RequestMethod.GET, headers="Accept=application/json")
 	public ApplicationUser getApplicationUser(@PathVariable String userId){
 		return applicationUserService.getApplicationUser(userId);
-	}	
+	}
+	
+	@RequestMapping(value="/user", method=RequestMethod.POST, headers="Accept=application/json")
+	public void saveApplicationUser(@RequestBody ApplicationUser applicationUser){
+		applicationUserService.createApplicationUser(applicationUser);
+	}
 }

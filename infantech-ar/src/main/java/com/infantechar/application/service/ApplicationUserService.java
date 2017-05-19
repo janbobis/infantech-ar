@@ -14,8 +14,8 @@ public class ApplicationUserService {
 	@Autowired
 	ApplicationUserRepository repository;
 	
-	public void createApplicationUser(ApplicationUser applicationUser){
-		repository.save(applicationUser);
+	public void createApplicationUser(ApplicationUser applicationUser){	
+		repository.saveAndFlush(applicationUser);
 	}
 	
 	public ApplicationUser getApplicationUser(String userId){

@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name="promotionitem")
 public class PromotionItem {
@@ -27,11 +29,13 @@ public class PromotionItem {
 	@Column(name="merchantid")
 	private String merchantId;	
 	
-	@Column(name="validatedatestart")
-	private Date validateDateStart;
+	@JsonFormat(pattern="dd-MM-yyyy")
+	@Column(name="validitydatestart")
+	private Date validityDateStart;
 	
-	@Column(name="validatedateend")
-	private Date validateDateEnd;
+	@JsonFormat(pattern="dd-MM-yyyy")
+	@Column(name="validitydateend")
+	private Date validityDateEnd;
 	
 	@Column(name="respawn")
 	private int reSpawn;
@@ -46,7 +50,7 @@ public class PromotionItem {
 	private String userId;
 	
 	
-	public String getPromotionItemid() {
+	public String getPromotionItemId() {
 		return promotionItemId;
 	}
 	public void setPromotionItemId(String promotionItemId) {
@@ -75,20 +79,20 @@ public class PromotionItem {
 	}
 	public void setMerchantId(String merchantId) {
 		this.merchantId = merchantId;
+	}	
+	public Date getValidityDateStart() {
+		return validityDateStart;
 	}
-	public Date getValidateDateStart() {
-		return validateDateStart;
+	public void setValidityDateStart(Date validityDateStart) {
+		this.validityDateStart = validityDateStart;
 	}
-	public void setValidateDateStart(Date validateDateStart) {
-		this.validateDateStart = validateDateStart;
+	public Date getValidityDateEnd() {
+		return validityDateEnd;
 	}
-	public Date getValidateDateEnd() {
-		return validateDateEnd;
+	public void setValidityDateEnd(Date validityDateEnd) {
+		this.validityDateEnd = validityDateEnd;
 	}
-	public void setValidateDateEnd(Date validateDateEnd) {
-		this.validateDateEnd = validateDateEnd;
-	}
-	public int isReSpawn() {
+	public int getReSpawn() {
 		return reSpawn;
 	}
 	public void setReSpawn(int reSpawn) {
