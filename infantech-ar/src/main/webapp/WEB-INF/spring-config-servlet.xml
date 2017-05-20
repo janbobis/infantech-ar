@@ -12,7 +12,8 @@
 	
 	<jpa:repositories base-package="com.infantechar.application.repository" />	
 	
-	<import resource="jpa-config-oracle.xml"/>
+	<!-- <import resource="jpa-config-oracle.xml"/> -->
+	<import resource="jpa-config-mysql.xml"/>
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.jpa.JpaTransactionManager">
